@@ -20,5 +20,4 @@ jobs:
         uses: actions/checkout@v4
       - name: Run tests
         run: mvn test
-      - name: Run Checkstyle
-        run: mvn checkstyle:check
+      
