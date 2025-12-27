@@ -1,28 +1,18 @@
-name: build-wf
+name: Learning
 on:
   push:
     branches:
       - main
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs on: ubuntu-latest
     steps:
-      - name: Code checkout
+      - name: Pull code
         uses: actions/checkout@v4
-      - name: Maven build run
+      - name: Build using maven
         run: mvn install
-      - name: Archive production artifacts
+      - name: Save artifact
         uses: actions/upload-artifact@v4
         with:
-          name: built-artifacts
-          path: /target/*.war  
-
-  testing:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Code checkout
-        uses: actions/checkout@v4
-      - name: Run tests
-        run: mvn test
-      
+          name: vprofile
+          path: target/*.war  
