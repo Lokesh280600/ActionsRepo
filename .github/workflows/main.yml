@@ -42,7 +42,7 @@ jobs:
           scan-type: fs
           scan-ref: .
           format: table
-          vuln-type: os, libraries
+          vuln-type: os,library
           exit-code: 0
           ouput: trivy-results
       - name: Save Trivy scan results
