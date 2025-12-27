@@ -31,7 +31,7 @@ jobs:
         run: echo "Test not done since branch is not main"        
 
   SecurityScan:
-    runs on: ubuntu-latest
+    runs-on: ubuntu-latest
     needs: test
     steps:
       - name: Pull code
