@@ -18,11 +18,12 @@ jobs:
           path: target/*.war  
   test:
     runs-on: ubuntu-latest
+    need: build
     steps:
       - name: Maven testing
-        if: github.ref != 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
         run: mvn test    
 
       - name: Skip testing    
-        if: github.ref == 'refs/heads/main'
+        if: github.ref != 'refs/heads/main'
         run: echo "Test not done since branch is not main"        
