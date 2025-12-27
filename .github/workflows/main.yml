@@ -18,7 +18,7 @@ jobs:
           path: target/*.war  
   test:
     runs-on: ubuntu-latest
-    need: build
+    needs: build
     steps:
       - name: Maven testing
         if: github.ref == 'refs/heads/main'
