@@ -22,5 +22,5 @@ jobs:
       - name: Maven testing
         if: github.ref != 'refs/heads/main'
         run: mvn test        
-        else:
+        if: github.ref -= 'refs/heads/main'
         run: echo "Test not done since branch is not main"        
