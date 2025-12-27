@@ -12,7 +12,7 @@ jobs:
       - name: Maven build run
         run: mvn install
       - name: Archive production artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: built-artifacts
           path: /target/*.war  
