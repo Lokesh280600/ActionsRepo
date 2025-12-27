@@ -44,7 +44,7 @@ jobs:
           format: table
           vuln-type: os,library
           exit-code: 0
-          ouput: trivy-results
+          output: trivy-results
       - name: Save Trivy scan results
         uses: actions/upload-artifact@v4
         with:
