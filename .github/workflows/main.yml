@@ -24,5 +24,5 @@ jobs:
         run: mvn test    
 
       - name: Skip testing    
-        if: github.ref -= 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
         run: echo "Test not done since branch is not main"        
