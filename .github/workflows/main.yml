@@ -16,3 +16,11 @@ jobs:
         with:
           name: vprofile
           path: target/*.war  
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Maven testing
+        if: github.ref != 'refs/heads/main'
+        run: mvn test        
+        else:
+        run: echo "Test not done since branch is not main"        
